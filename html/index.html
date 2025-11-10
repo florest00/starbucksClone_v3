@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Clone</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script defer src="../js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- header-web -->
+        <div class="header-web">
+            <div class="header-web-inner">
+                <div class="hw-inner-l">
+                    <h1 class="logo"><img src="../images/header/logo.png" alt=""></h1>
+                </div>
+                <div class="hw-inner-r">
+                    <nav class="util-nav">
+                        <ul>
+                            <li><a href="#">Sign in</a></li>
+                            <li><a href="#">My Starbucks</a></li>
+                            <li><a href="#">Customer Service & Ideas</a></li>
+                            <li><a href="#">Find a Store</a></li>
+                            <li><a href="#"><img src="../images/header/icon_magnifier_black.png"
+                                        alt="icon_magnifier_black"></a></li>
+                        </ul>
+                    </nav>
+                    <nav class="gnb">
+                        <ul>
+                            <li data-menu="coffee"><a href="#">COFFEE</a></li>
+                            <li data-menu="menu"><a href="#">MENU</a></li>
+                            <li data-menu="store"><a href="#">STORE</a></li>
+                            <li data-menu="esg"><a href="#">ESG</a></li>
+                            <li data-menu="rewards"><a href="#">STARBUCKS REWARDS</a></li>
+                            <li data-menu="sales"><a href="#">CORPORATE SALES</a></li>
+                            <li data-menu="whatsnew"><a href="#">WHAT'S NEW</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- .lnb for .gnb -->
+        <div class="lnb-wrap">
+            <div class="lnb" data-menu="coffee">
+                <ul>
+                    <li>
+                        <h5><a href="#">커피</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">커피 이야기</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">스타벅스 리저브</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">에스프레소 음료</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">최상의 커피를 즐기는 법</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="lnb" data-menu="menu">
+                <ul>
+                    <li>
+                        <h5><a href="#">음료</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">푸드</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">상품</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">카드</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">메뉴 이야기</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="lnb" data-menu="store">
+                <ul>
+                    <li>
+                        <h5><a href="#">매장찾기</a></h5>
+                        <ul>
+                            <li><a href="#">퀵 검색</a></li>
+                            <li><a href="#">지역 검색</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">드라이브 스루 매장</a></h5>
+                        <!-- <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul> -->
+                    </li>
+                    <li>
+                        <h5><a href="#">스타벅스 리저브 매장</a></h5>
+                        <!-- <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul> -->
+                    </li>
+                    <li>
+                        <h5><a href="#">커뮤니티 스토어 매장</a></h5>
+                        <!-- <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul> -->
+                    </li>
+                </ul>
+            </div>
+            <div class="lnb" data-menu="esg">
+                <ul>
+                    <li>
+                        <h5><a href="#">커뮤니티</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">친환경</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">윤리 구매</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">ESG 정보</a></h5>
+                        <!-- <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul> -->
+                    </li>
+                </ul>
+            </div>
+            <div class="lnb" data-menu="rewards">
+                <ul>
+                    <li>
+                        <h5><a href="#">스타벅스 리워드</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">스타벅스 카드</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">스타벅스 모바일카드</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="lnb" data-menu="sales">
+                <ul>
+                    <li>
+                        <h5><a href="#">단체 및 기업 구매 안내</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">단체 주문 배달 안내</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="lnb" data-menu="whatsnew">
+                <ul>
+                    <li>
+                        <h5><a href="#">이벤트</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">뉴스</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">매장별 이벤트</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">e-프리퀀시</a></h5>
+                        <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5><a href="#">공지사항</a></h5>
+                        <!-- <ul>
+                            <li><a href="#">스타벅스 원두</a></li>
+                        </ul> -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- header-mob -->
+        <div class="header-mob">
+
+        </div>
+    </header>
+    <!-- container -->
+    <div class="container">
+        <!-- main-visual -->
+        <section class="main-visual">
+            <div class="main-visual-inner">
+                <div class="main-visual-slogan">
+                    <img src="../images/visual/2025_winter_top_slogan_251027.png" alt="slogan">
+                </div>
+                <div class="main-visual-set">
+                    <div class="set-common set001">
+                        <img src="../images/visual/2025_winter_top_drink01_251027.png" alt="drink01">
+                    </div>
+                    <div class="set-common set002">
+                        <img src="../images/visual/2025_winter_top_drink02_251027.png" alt="drink02">
+                    </div>
+                    <div class="set-common set003">
+                        <img src="../images/visual/2025_winter_top_drink03_251027.png" alt="drink03">
+                    </div>
+                    <div class="set-common set004">
+                        <img src="../images/visual/2025_winter_top_drink04_251027.png" alt="drink04">
+                    </div>
+                    <div class="set-common set005">
+                        <img src="../images/visual/2025_winter_top_drink05_251027.png" alt="drink05">
+                    </div>
+                </div>
+                <div class="main-visual-btn">
+                    <a href="#">자세히 보기</a>
+                </div>
+            </div>
+        </section>
+        <!-- notice -->
+        <section class="notice">
+            <div class="notice-left">
+                <h5>공지사항</h5>
+                <div class="notice-list notice-list-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide notice-slide">
+                            <a href="#">
+                                개인정보처리방침 개정안내
+                            </a>
+                        </div>
+                        <div class="swiper-slide notice-slide">
+                            <a href="#">
+                                사이렌 오더/딜리버스 음료 기본 설정 변경 안내 (ICED -> HOT)
+                            </a>
+                        </div>
+                        <div class="swiper-slide notice-slide">
+                            <a href="#">
+                                시스탬 개선 및 서비스 점검 안내
+                            </a>
+                        </div>
+                        <div class="swiper-slide notice-slide">
+                            <a href="#">
+                                개인정보처리방침 개정 안내
+                            </a>
+                        </div>
+                        <div class="swiper-slide notice-slide">
+                            <a href="#">
+                                홈페이지 이용약관 및 스타벅스 카드 이용약관 개정 안내
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#"><img src="../images/notice/btn_notice_plus.png" alt="btn_notice_plus"></a>
+            </div>
+            <div class="notice-right">
+                <a href="#">
+                    <p>스타벅스 프로모션</p>
+                    <span class="open">
+                        <img src="../images/notice/btn_prom_down.png" alt="">
+                    </span>
+                </a>
+            </div>
+            <div class="notice-bg">
+
+            </div>
+        </section>
+        <!-- prom -->
+        <section class="promotion">
+            <div class="swiper promotion-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../images/promotion/tVaJCq_20251029090221768.jpg" alt="">
+                        <a href="#" class="btn-promotion">자세히 보기</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/promotion/ukEYi4_20251023081003240.jpg" alt="">
+                        <a href="#" class="btn-promotion">자세히 보기</a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+
+        <!-- <section class="promotion">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="../images/promotion/tVaJCq_20251029090221768.jpg" alt=""></div>
+                    <div class="slide"><img src="../images/promotion/ukEYi4_20251023081003240.jpg" alt=""></div>
+                </div>
+                <div class="controls">
+                    <div class="dots"></div>
+                    <button id="pause-btn">⏸</button>
+                </div>
+            </div>
+        </section> -->
+        <!-- reward -->
+        <section class="reward">
+            <div class="reward-inner">
+                <div class="reward-logo">
+                    <img src="../images/reward/rewards-logo.png" alt="reward-logo">
+                </div>
+                <div class="reward-content">
+                    <div class="reward-content-top">
+                        <div class="rct-txt-wrapper">
+                            <h2>스타벅스만의 특별한 혜택, <strong>스타벅스 리워드</strong></h2>
+                            <p><strong>스타벅스 회원이세요?</strong> 로그인을 통해 나만의 리워드를 확인해보세요. <br>
+                                <strong>스타벅스 회원이 아니세요?</strong> 가입을 통해 리워드 혜택을 즐기세요.
+                            </p>
+                        </div>
+                        <div class="btn-signin-group">
+                            <a href="#" class="btn-signin-join">회원가입</a>
+                            <a href="#" class="btn-signin-login">로그인</a>
+                        </div>
+                    </div>
+                    <div class="reward-content-bottom">
+                        <div class="rcb-txt-wrapper">
+                            <p>회원 가입 후, 스타벅스 모바일 카드를 <strong>"나에게 선물하기"로 구매하시고, 편리하게 등록하세요!</strong><br>
+                                카드를 등록하여 스타벅스 리워드 회원이 되신 후, 첫 구매를 하시면 무료 음료쿠폰을 드립니다!</p>
+                        </div>
+                        <div class="btn-gift">
+                            <a href="#">스타벅스 모바일 카드 선물하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- footer -->
+    <footer>
+
+    </footer>
+</body>
+
+</html>

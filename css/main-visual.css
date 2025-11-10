@@ -1,0 +1,107 @@
+.main-visual {
+    height: 32.3vw;
+    background-image: url(../images/visual/2025_winter_top_bg_251027.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-visual .main-visual-inner {
+    max-width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.main-visual-slogan {
+    position: absolute;
+    width: 21.6126%;
+    top: 39.63%;
+    left: 12.5%;
+}
+
+.main-visual-slogan > img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+.main-visual-set {
+    height: 100%;
+}
+
+.set-common {
+    position: absolute
+}
+
+.set-common > img {
+    width: 100%;
+}
+
+.set001 {
+    top: 15.636%;
+    left: 55.164%;
+    width: 12.796%;
+    z-index: 9;
+}
+
+.set002 {
+    top: 9.908%;
+    left: 45.29%;
+    width: 12.796%;
+    z-index: 8;
+}
+
+.set003 {
+    top: 17.648%;
+    left: 64.081%;
+    width: 13.199%;
+    z-index: 8;
+}
+
+.set004 {
+    top: 10.528%;
+    left: 36.071%;
+    width: 12.595%;
+    z-index: 8;
+}
+
+.set005 {
+    top: 36.844%;
+    left: 71.134%;
+    width: 12.494%;
+    z-index: 8;
+}
+
+.main-visual-btn {
+    position: absolute;
+    top: 59.134%;
+    left: 12.5%;
+    width: 21.6126%;
+    height: 38px;
+    text-align: center;
+    z-index: 10;
+}
+
+.main-visual-btn > a {
+    display: block;
+    width: 25.053%;
+    min-width: 125px;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 34px;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #fff;
+    border: 2px solid #fff;
+    -webkit-transition: background-color .6s, color .7s, border-color .7s;
+    text-decoration: none;
+}
+
+.main-visual-btn > a:hover {
+    background: #fff;
+    color: red;
+    text-decoration: underline;
+}

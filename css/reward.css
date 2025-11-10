@@ -1,0 +1,123 @@
+.reward {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #1e3932;
+}
+
+.reward-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    
+}
+
+.reward-logo {
+    width: 16.3%;
+    margin: 0 40px;
+    text-align: center;
+}
+
+.reward-logo > img {
+    width: 100%;
+}
+
+.reward-content > div:first-child {
+    border-bottom: 1px solid #4b615b;
+    margin-bottom: 22px;
+}
+
+.reward-content-top .rct-txt-wrapper h2 {
+    line-height: 1.4;
+    margin-bottom: 12px;
+    font-size: 26px;
+    font-weight: normal;
+    color: #fff;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.reward-content {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding-right: 30px;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.reward-content-top, .reward-content-bottom {
+    position: relative;
+}
+
+.reward-content-top > .rct-txt-wrapper > p {
+    line-height: 1.4;
+    font-size: 17px;
+    margin-bottom: 22px;
+}
+
+.reward-content-bottom > .rcb-txt-wrapper > p {
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.btn-signin-group {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    font-size: 0;
+}
+
+.btn-signin-group > a {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 38px;
+    line-height: 36px;
+    padding-left: 21.4px;
+    padding-right: 21.4px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-signin-group > a:hover {
+    text-decoration: underline;
+}
+
+.btn-signin-join {
+    background-color: #00704a;
+    border: 2px solid #00704a;
+}
+
+.btn-signin-login {
+    margin-left: 9px;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.btn-gift {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    height: 38px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 14px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.btn-gift > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.btn-gift > a:hover {
+    text-decoration: underline;
+}
