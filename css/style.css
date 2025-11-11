@@ -6,4 +6,146 @@
 @import url(../css/notice.css);
 @import url(../css/promo.css);
 @import url(../css/reward.css);
+/* import는 언제 쓰는게 좋을까? 공용css 관리할 때? */
 
+/* ============= main-bean ============= */
+
+section.main-bean {
+    background: url(../images/bean/2025_winter_promotion_bg_251027.jpg) center / cover no-repeat;
+    height: 578px; 
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.main-bean-inner {
+    max-width: 1124px;
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.main-bean-inner .bean-img-box {
+    position: absolute;
+    top: 13.324%;
+    left: 28.572%;
+    width: 20.643%;
+    margin-left: -5%;
+    z-index: 9;
+    opacity: 1;
+}
+
+.bean-img-box img {
+    width: 100%;
+}
+
+.bean-txt-box {
+    position: absolute;
+    top: 31.144%;
+    right: 21.786%;
+    width: 31.143%;
+    z-index: 9;
+    opacity: 1;
+}
+
+.bean-txt-box img {
+    width: 100%;
+}
+
+.btn-bean-detail {
+    width: 125px;
+    height: 38px;
+    margin-top: 40px;
+}
+
+.btn-bean-detail a {
+    color: #fff;
+    border: 2px solid #fff;
+    transition: background-color .7s, color .7s;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    line-height: 34px;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn-bean-detail a:hover {
+    text-decoration: underline;
+    background: #fff;
+    color: red;
+}
+
+.reserve {
+    display: block;
+    position: relative;
+    height: 400px;
+    background: url(../images/reserve/251021_pc_reserve_bg.jpg) no-repeat center top;
+    background-size: 100% 400px;
+    overflow: hidden;
+}
+
+.reserve-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.reserve-tit {
+    position: relative;
+    z-index: 10;
+    padding-top: 63px;
+    max-width: 1080px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.reserve-tit img {
+    width: auto;
+    transform: translateX(70px);
+}
+
+.reserve-visual {
+    position: absolute;
+    top: 0;
+    right: -12%;
+    opacity: 1;
+}
+
+.reserve-visual img {
+    width: auto;
+    max-width: none;
+}
+
+.reserve-detail-btn-wrap {
+    position: relative;
+    z-index: 10;
+    max-width: 1080px;
+    margin: 43px auto;
+    padding-left: 306px;
+    box-sizing: border-box;
+}
+
+.reserve-detail-btn {
+    width: 125px;
+    height: 38px;
+}
+
+.reserve-detail-btn a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #d0923e;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+    border: 2px solid #d0923e;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background-color .7s, color .7s border-color .7s;
+}
