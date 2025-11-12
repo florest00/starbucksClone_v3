@@ -149,3 +149,249 @@ section.main-bean {
     box-sizing: border-box;
     transition: background-color .7s, color .7s border-color .7s;
 }
+
+.reserve-detail-btn a:hover {
+    background-color: #d0923e;
+    color: rgb(16, 31, 16);
+    transition: background-color .7s, color .7s;
+    text-decoration: underline;
+}
+
+.fav {
+    background: url(../images/fav/2025_winter_pick_bg_251027.jpg) center center fixed no-repeat #45434c;
+    background-size: auto 87%;
+    height: 800px;
+    padding: 0;
+    position: relative;
+    background-position: bottom;
+    overflow: hidden;
+}
+
+.fav-inner {
+    left: 50%;
+    margin-left: -640px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1280px;
+}
+
+.fav-prod-txt01 {
+    background: url(../images/fav/2025_january_pick_txt01.png) no-repeat;
+    height: 204px;
+    left: 200px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -20000px;
+    top: 120px;
+    width: 258px;
+    z-index: 7;
+    opacity: 0;
+    animation: fadeMove 1s ease forwards;
+    animation-delay: 0.3s;
+    /* transition: opacity 0.8s ease, top 0.8s ease; */
+}
+
+.fav-prod-txt01.active {
+    opacity: 1;
+    top: 170px;
+}
+
+@keyframes fadeMove {
+    from {
+        opacity: 0;
+        /* top: 120px; */
+        left: 0;
+    }
+    to {
+        opacity: 1;
+        /* top: 170px; */
+        left: 200px;
+    }
+}
+
+.fav-prod-txt02 {
+    background: url(../images/fav/2025_january_pick_txt02.png);
+    background-size: cover;
+    height: 156px;
+    left: 92px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -200000px;
+    top: 370px;
+    width: 362px;
+    z-index: 7;
+    opacity: 0;
+    animation: fadeMove01 1s ease forwards;
+    animation-delay: .3s;
+}
+
+.fav-prod-txt02.active {
+    opacity: 1;
+    top: 420px;
+}
+
+@keyframes fadeMove01 {
+    from {
+        opacity: 0;
+        /* top: 370px; */
+        left: 0;
+    }
+    to {
+        opacity: 1;
+        /* top: 420px; */
+        left: 92px;
+    }
+    
+}
+
+.fav-img {
+    position: absolute;
+    top: 93px;
+    right: -193px;
+    width: 953px;
+    height: 615px;
+    background-image: url(../images/fav/2025_winter_pick_img_251027.png);
+    background-size: 100% !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 7;
+}
+
+.btn-fav-prod {
+    position: absolute;
+    top: 570px;
+    left: 328px;
+    z-index: 7;
+    /* border: 2px solid #fff; */
+    border-radius: 3px;
+    width: 125px;
+    height: 38px;
+    opacity: 0;
+    animation: fadeIn02 1s ease forwards;
+    animation-delay: .3s;
+}
+
+@keyframes fadeIn02 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.btn-fav-prod a {
+    color: #fff;
+    display: block;
+    height: 100%;
+    line-height: 34px;
+    text-align: center;
+    width: 100%;
+    transition: background-color .7s, color .7s;
+    font-size: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-fav-prod a:hover {
+    background-color: #fff;
+    color: #343434;
+    text-decoration: underline;
+}
+
+.magazine {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    background: url(../images/magazine/reserve_bg_pc.png) no-repeat 50% 100%;
+    background-size: auto 353px;
+}
+
+.magazine .magazine-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.magazine-title {
+    position: relative;
+    z-index: 10;
+    padding-top: 135px;
+    padding-left: 55px;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.magazine-title img {
+    width: auto;
+    transform: translateX(70px);
+}
+
+.magazine-visual {
+    display: block;
+    position: absolute;
+    bottom: auto;
+    top: 0;
+    right: 50%;
+    margin-right: -463px;      
+
+}
+
+.magazine-visual img {
+    width: auto;
+    opacity: 0;
+    animation: fadeIn02 1s ease forwards;
+}
+
+.magazine-visual-pc {
+    max-width: none;
+    min-width: auto;
+}
+
+.magazine-visual-btn-area {
+    padding-left: 0;
+    width: 100% !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    max-width: 1100px;
+    margin: 33px auto 0;
+    box-sizing: border-box;
+}
+
+.magazine-visual-btn {
+    box-sizing: border-box;
+    padding-left: 225px;
+    width: 583px;
+    height: 38px;
+}
+
+.magazine-visual-btn-area .magazine-visual-btn a {
+    display: block;
+    margin: 0 auto;
+    width: 125px;
+    height: 100%;
+    font-size: 15px;
+    line-height: 34px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background-color .7s, color .7s, border-color .7s;
+    color: #000;
+    /* -webkit-transition: background-color .7s, color .7s, border-color .7s; */
+}
+
+
+.magazine-visual-btn-area .magazine-visual-btn a:hover {
+    color: #fff;
+    background: #000;
+    text-decoration: underline;
+}
