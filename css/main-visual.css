@@ -19,6 +19,9 @@
     width: 21.6126%;
     top: 39.63%;
     left: 12.5%;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: .3s;
 }
 
 .main-visual-slogan > img {
@@ -31,7 +34,7 @@
 }
 
 .set-common {
-    position: absolute
+    position: absolute;
 }
 
 .set-common > img {
@@ -43,6 +46,9 @@
     left: 55.164%;
     width: 12.796%;
     z-index: 9;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: .6s;
 }
 
 .set002 {
@@ -50,6 +56,18 @@
     left: 45.29%;
     width: 12.796%;
     z-index: 8;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: .9s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .set003 {
@@ -57,6 +75,9 @@
     left: 64.081%;
     width: 13.199%;
     z-index: 8;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: 1.2s;
 }
 
 .set004 {
@@ -64,6 +85,9 @@
     left: 36.071%;
     width: 12.595%;
     z-index: 8;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: 1.5s;
 }
 
 .set005 {
@@ -71,6 +95,9 @@
     left: 71.134%;
     width: 12.494%;
     z-index: 8;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: 1.8s;
 }
 
 .main-visual-btn {
@@ -81,6 +108,9 @@
     height: 38px;
     text-align: center;
     z-index: 10;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: 2s;
 }
 
 .main-visual-btn > a {
