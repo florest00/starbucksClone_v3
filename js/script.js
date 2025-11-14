@@ -1,35 +1,75 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const animatedItems = document.querySelectorAll(".animate-on-scroll");
   const gnbItems = document.querySelectorAll(".gnb > ul > li");
   const lnbWrap = document.querySelector(".lnb-wrap");
   const lnbs = document.querySelectorAll(".lnb");
+  let closeTimeout = null;
+  let activeMenu = null;
 
-  let closeTimeout = null; // 닫힘 타이머
-  let activeMenu = null; // 현재 열려있는 메뉴
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+
+          if (entry.isIntersecting) {
+            el.classList.remove("active");
+            void el.offsetWidth;
+            el.classList.add("active");
+          } else {
+            el.classList.remove("active");
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -20% 0px",
+        threshold: 0,
+      }
+    );
+
+    animatedItems.forEach((it) => observer.observe(it));
+  } else {
+    const check = () => {
+      const vh = window.innerHeight;
+      animatedItems.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const inView = rect.top < vh * 0.85 && rect.bottom > vh * 0.1;
+        if (inView) {
+          el.classList.remove("active");
+          void el.offsetWidth;
+          el.classList.add("active");
+        } else {
+          el.classList.remove("active");
+        }
+      });
+    };
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+  }
+
+  // / 스크롤 감지 애니메이션
 
   gnbItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
       const target = item.dataset.menu;
 
-      // 닫힘 예약이 걸려있으면 취소 (빠르게 옮길 때 닫히지 않게)
       if (closeTimeout) {
         clearTimeout(closeTimeout);
         closeTimeout = null;
       }
 
-      // 이미 다른 메뉴가 열려있다면 애니메이션이 자연스럽게 이어지게
       if (activeMenu !== target) {
-        // 다른 LNB 닫고
         lnbs.forEach((lnb) => {
           lnb.classList.remove("active");
         });
 
-        // 현재 LNB만 열기
         const currentLnb = document.querySelector(
           `.lnb[data-menu="${target}"]`
         );
         if (currentLnb) currentLnb.classList.add("active");
 
-        // 전체 래퍼 열기
         lnbWrap.classList.add("active");
         activeMenu = target;
       }
@@ -38,20 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
     item.addEventListener("mouseleave", (e) => {
       const to = e.relatedTarget;
 
-      // 이동한 곳이 다른 gnb li나 lnb 내부라면 닫지 않음
       if (to && (to.closest(".gnb > ul > li") || to.closest(".lnb-wrap")))
         return;
 
-      // 닫힘 예약 (스타벅스처럼 약간의 지연 후 닫힘)
       closeTimeout = setTimeout(() => {
         lnbWrap.classList.remove("active");
         lnbs.forEach((lnb) => lnb.classList.remove("active"));
         activeMenu = null;
-      }, 300); // ← 이 delay가 스타벅스의 “자연스러움 포인트”
+      }, 300);
     });
   });
 
-  // LNB 영역 벗어날 때도 동일한 닫힘 타이밍 적용
   lnbWrap.addEventListener("mouseleave", () => {
     closeTimeout = setTimeout(() => {
       lnbWrap.classList.remove("active");
@@ -60,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300);
   });
 
-  // 다시 lnbWrap에 마우스가 들어오면 닫힘 취소
   lnbWrap.addEventListener("mouseenter", () => {
     if (closeTimeout) {
       clearTimeout(closeTimeout);
@@ -111,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
     promotion.classList.toggle("active");
   });
 
-  // 끄앙 자바스크립트 어렵다 잘하고 싶다 ㅠㅠ
   // ======== promotion slider ======== //
   // const slidesContainer = document.querySelector(".slides");
   // let slides = document.querySelectorAll(".slide");
