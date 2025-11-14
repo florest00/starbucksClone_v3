@@ -8,6 +8,38 @@
 @import url(../css/reward.css);
 /* import는 언제 쓰는게 좋을까? 공용css 관리할 때? */
 
+
+/* ======== top-wrap ======== */
+.top-wrap {
+    position: relative;
+    height: 100%;
+    border-top: 0;
+}
+
+.layer-floating {
+    position: fixed;
+    top: 154px;
+    left: 54.5%;
+    width: 140px;
+    margin-left: 485px;
+    z-index: 999;
+}
+
+.layer-floating a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.layer-floating img {
+    display: block;
+    width: 100%;
+}
+
+.layer-floating .mobile-badge {
+    display: none;
+}
+
 /* ============= main-bean ============= */
 
 section.main-bean {
