@@ -49,6 +49,16 @@ section.main-bean {
     display: block;
 }
 
+/* section.main-bean img {
+    translate: -100%;
+    opacity: 0;
+}
+
+section.main-bean.show img {
+    translate: 0;
+    opacity: 1;
+} */
+
 .main-bean-inner {
     max-width: 1124px;
     position: relative;
@@ -251,14 +261,13 @@ section.main-bean {
     width: 258px;
     z-index: 7;
     opacity: 0;
-    animation: fadeMove 1s ease forwards;
-    animation-delay: 0.3s;
-    /* transition: opacity 0.8s ease, top 0.8s ease; */
 }
 
 .fav-prod-txt01.active {
-    opacity: 1;
     top: 170px;
+    animation: fadeMove 1s ease forwards;
+    animation-delay: 0.3s;
+    /* transition: opacity 0.8s ease, top 0.8s ease; */
 }
 
 @keyframes fadeMove {
@@ -286,13 +295,12 @@ section.main-bean {
     width: 362px;
     z-index: 7;
     opacity: 0;
-    animation: fadeMove01 1s ease forwards;
-    animation-delay: .3s;
 }
 
 .fav-prod-txt02.active {
-    opacity: 1;
     top: 420px;
+    animation: fadeMove01 1s ease forwards;
+    animation-delay: .3s;
 }
 
 @keyframes fadeMove01 {
@@ -333,8 +341,11 @@ section.main-bean {
     width: 125px;
     height: 38px;
     opacity: 0;
+}
+
+.btn-fav-prod.active {
     animation: fadeIn02 1s ease forwards;
-    animation-delay: .3s;
+    animation-delay: .8s;
 }
 
 @keyframes fadeIn02 {
@@ -391,12 +402,20 @@ section.main-bean {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+    opacity: 0;
 }
 
-.magazine-title img {
+.magazine-title.active {
     width: auto;
     transform: translateX(70px);
+    animation: fadeIn02 1s ease forwards;
+    animation-delay: .8s;
 }
+
+/* .magazine-title img {
+    width: auto;
+    transform: translateX(70px);
+} */
 
 .magazine-visual {
     display: block;
@@ -404,15 +423,20 @@ section.main-bean {
     bottom: auto;
     top: 0;
     right: 50%;
-    margin-right: -463px;      
-
+    margin-right: -463px;
+    opacity: 0;  
 }
 
-.magazine-visual img {
+.magazine-visual.active {
+    width: auto;
+    animation: fadeIn02 1s ease forwards;
+}
+
+/* .magazine-visual img {
     width: auto;
     opacity: 0;
     animation: fadeIn02 1s ease forwards;
-}
+} */
 
 .magazine-visual-pc {
     max-width: none;
@@ -436,6 +460,13 @@ section.main-bean {
     padding-left: 225px;
     width: 583px;
     height: 38px;
+    opacity: 0;
+}
+
+.magazine-visual-btn.active {
+    transition: background-color .7s, color .7s, border-color .7s;
+    animation: fadeIn02 1s ease forwards;
+    animation-delay: .8s;
 }
 
 .magazine-visual-btn-area .magazine-visual-btn a {
@@ -449,7 +480,6 @@ section.main-bean {
     border: 2px solid #000;
     border-radius: 5px;
     box-sizing: border-box;
-    transition: background-color .7s, color .7s, border-color .7s;
     color: #000;
     /* -webkit-transition: background-color .7s, color .7s, border-color .7s; */
 }
@@ -539,8 +569,12 @@ section.main-bean {
     top: 100px;
     width: 374px;
     z-index: 4;
-    animation: fadeMove03 .6s ease forwards;
-    animation-delay: .3s;
+    opacity: 0;
+}
+
+.store-txt01.active {
+    animation: fadeMove04 .6s ease forwards;
+    animation-delay: .6s;
 }
 
 @keyframes fadeMove03 {
@@ -566,8 +600,25 @@ section.main-bean {
     top: 168px;
     width: 366px;
     z-index: 4;
-    animation: fadeMove03 1s ease forwards;
-    animation-delay: .4s;
+    opacity: 0;
+}
+
+.store-txt02.active {
+    animation: fadeMove04 1s ease forwards;
+    animation-delay: .9s;
+}
+
+@keyframes fadeMove04 {
+    from {
+        opacity: 0;
+        transform: translateX(120px);
+        /* 오른쪽에서 100px 밀려있게 시작 */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        /* 제자리로 */
+    }
 }
 
 .store-btn {
@@ -581,8 +632,11 @@ section.main-bean {
     width: 121px;
     z-index: 4;
     opacity: 0;
-    animation: fadeMove03 .6s ease forwards;
-    animation-delay: .6s;
+}
+
+.store-btn.active {
+    animation: fadeMove04 1s ease forwards;
+    animation-delay: 1.2s;
 }
 
 .store-btn > a {
