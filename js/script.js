@@ -128,4 +128,72 @@ document.addEventListener("DOMContentLoaded", () => {
     promoIcon.classList.toggle("active");
     promotion.classList.toggle("active");
   });
+
+  /* =============== 모바일 헤더 =================== */
+  // .header-mob-right ul li.header-mob04 a (햄버거 메뉴 아이콘)를 누르면 gnb 가 열림
+  // btn-gnb-close 룰 누르면 버튼이 회전하면서 gnb 가 닫힘
+  const mobGnb = document.querySelector(".header-mob-gnb");
+  const mobDim = document.querySelector(".header-mob-dim");
+  const hamburger = document.querySelector(
+    ".header-mob-right ul li.header-mob04 a"
+  );
+  const btnClose = document.querySelector(".btn-gnb-close");
+  // const arrowDown = document.querySelector(".mob-gnb-arrow-down");
+  // const gnbMenusLi = document.querySelector(".mob-gnb-menus ul li");
+
+  hamburger.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // 토글
+    mobGnb.classList.add("active");
+    mobDim.classList.add("active");
+  });
+
+  btnClose.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    //회전
+    // btnClose.classList.add("active");
+    // 토글
+    mobGnb.classList.remove("active");
+    mobDim.classList.remove("active");
+
+    setTimeout(() => {
+      btnClose.classList.remove("active");
+    }, 600);
+  });
+
+  mobDim.addEventListener("click", (e) => {
+    e.preventDefault();
+    // 토글
+    mobGnb.classList.remove("active");
+    mobDim.classList.remove("active");
+  });
+
+  // gnbMenusLi.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   arrowDown.classList.toggle("active");
+  //   gnbMenusLi.classList.toggle("active");
+  // });
+  const toggles = document.querySelectorAll(".mob-gnb-ttl1, .mob-gnb-ttl2");
+
+  toggles.forEach((item) => {
+    const arrow = item.querySelector(".mob-gnb-arrow-down");
+
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      arrow.classList.toggle("active");
+      let nextEl = item.nextElementSibling;
+
+      while (
+        nextEl &&
+        !nextEl.classList.contains("mob-gnb-ttl1") &&
+        !nextEl.classList.contains("mob-gnb-ttl2")
+      ) {
+        nextEl.classList.toggle("active");
+        nextEl = nextEl.nextElementSibling;
+      }
+    });
+  });
 });
