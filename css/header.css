@@ -162,6 +162,16 @@
   display: none;
 }
 
+  .mob-gnb-menus ul li.mob-gnb-ttl1 {
+    display: none;
+  }
+  .mob-gnb-menus ul li.mob-gnb-ttl1 a {
+    display: none;
+  }
+  .mob-gnb-menus {
+    display: none;
+  }
+
 @media screen and (max-width: 920px) {
   .header-web {
     display: none;
@@ -375,6 +385,10 @@
     line-height: 50px;
     text-align: center;
     width: 100px;
+  }
+
+  .mob-gnb-menus.active {
+    display: block;
   }
 
   .mob-gnb-menus ul li.mob-gnb-ttl1 {

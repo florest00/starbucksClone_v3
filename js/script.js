@@ -132,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =============== 모바일 헤더 =================== */
   // .header-mob-right ul li.header-mob04 a (햄버거 메뉴 아이콘)를 누르면 gnb 가 열림
   // btn-gnb-close 룰 누르면 버튼이 회전하면서 gnb 가 닫힘
+  const mobGnbMenus = document.querySelector(".mob-gnb-menus");
   const mobGnb = document.querySelector(".header-mob-gnb");
   const mobDim = document.querySelector(".header-mob-dim");
   const hamburger = document.querySelector(
@@ -147,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 토글
     mobGnb.classList.add("active");
     mobDim.classList.add("active");
+    mobGnbMenus.classList.add("active");
   });
 
   btnClose.addEventListener("click", (e) => {
