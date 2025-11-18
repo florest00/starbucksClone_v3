@@ -15,8 +15,22 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    padding-left: 180px;
+    /* padding-left: 180px; */
     overflow: hidden;
+}
+
+.notice-left-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+
+.notice-left-inner h5 p {
+    display: block;
 }
 
 .notice-right {
@@ -33,7 +47,8 @@
     place-items: center center;
     position: absolute;
     top: 10px;
-    left: 277px;
+    left: 50%;
+    transform: translateX(-50%);
     gap: 64px;
     font-size: 16px;
     color: #242422;
@@ -44,6 +59,7 @@
     font-weight: 700;
     font-size: 16px;
     letter-spacing: -1.4px;
+    color: #393939;
 }
 
 .notice-right > a > span, .notice-left > a {
@@ -71,11 +87,16 @@
 .notice-left h5 {
     font-size: 16px;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .notice-list {
     height: 24px;
     overflow: hidden;
+}
+
+.notice-list a {
+    width: 36px;
 }
 
 .notice-list p {
@@ -96,3 +117,81 @@
     font-size: 14px;
 }
 
+.speaker-icon {
+    display: none;
+}
+
+@media screen and (max-width: 920px) {
+    /* body {
+        overflow-x: hidden;
+    } */
+
+    .notice {
+        height: 220px;
+    }
+
+    .notice-left {
+        height: 110px;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .notice-left-inenr > a {
+    width: 62px;
+    }
+
+    .notice-left-inenr > a > img {
+    max-width: none;
+    }
+
+    .notice-right {
+        height: 110px;
+        top: 110px;
+        width: 100%;
+    }
+
+    .notice-slide > a {
+    line-height: inherit;
+    color: #fff;
+    font-size: 18px;
+    }
+
+/* .notice-left-inner h5 {
+    text-indent: -2000px;
+} */
+
+    .notice-left-inner h5::before {
+    content: '';
+    background: url(../images/header/mob/icon_board_speaker.png);
+    display: block;
+    /* width: 65px; */
+    /* text-indent: -2000px; */
+    color: transparent;
+    }
+
+    .speaker-icon {
+        display: block;
+        width: 32px;
+    }
+
+    .speaker-icon img {
+        width: 100%;
+    }
+
+    .notice-left-inner h5 p {
+    display: none;
+    }
+
+    .notice-list a {
+        width: 62px;
+    }
+
+    .notice-right > a {
+    top: 38%;
+    }
+
+    .notice-right > a > p {
+    font-size: 28px;
+    }
+
+}
