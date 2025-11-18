@@ -700,6 +700,10 @@ section.main-bean.show img {
     min-width: auto;
 }
 
+.magazine-visual-mob {
+    display: none;
+}
+
 .magazine-visual-btn-area {
     padding-left: 0;
     width: 100% !important;
@@ -746,6 +750,45 @@ section.main-bean.show img {
     color: #fff;
     background: #000;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 920px) {
+    .magazine {
+        height: auto;
+        background: none;
+    }
+
+    .magazine-title {
+        display: none;
+    }
+
+    .magazine-visual {
+        position: static;
+        bottom: 0;
+        right: auto;
+        width: 100%;
+        height: 100%;
+        margin-right: 0;
+        opacity: 1;
+    }
+
+    .magazine-visual img {
+        max-width: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .magazine-visual-pc {
+        display: none;
+    }
+
+    .magazine-txt-pc {
+        display: none;
+    }
+
+    .magazine-visual-mob {
+        display: block;
+    }
 }
 
 /* ========== store ========== */
