@@ -9,9 +9,9 @@
 @import url(../css/reward.css);
 /* import는 언제 쓰는게 좋을까? 공용css 관리할 때? */
 
-.container {
+/* .container {
     overflow-x: hidden;
-}
+} */
 
 /* ======== top-wrap ======== */
 .top-wrap {
@@ -29,6 +29,11 @@
     z-index: 999;
 }
 
+.badge_cont1 {
+    width: 140px;
+    height: 96px;
+}
+
 .layer-floating a {
     display: block;
     width: 100%;
@@ -42,6 +47,17 @@
 
 .layer-floating .mobile-badge {
     display: none;
+}
+
+@media screen and (max-width: 920px) {
+    .layer-floating {
+        top: 108px;
+        width: 25.7%;
+        right: 1.8%;
+        left: 68%;
+        margin-left: 0;
+        z-index: 19;
+    }
 }
 
 /* ============= main-bean ============= */
@@ -789,6 +805,16 @@ section.main-bean.show img {
     .magazine-visual-mob {
         display: block;
     }
+
+    .magazine-visual-btn {
+        padding-left: 0;
+    }
+    
+    .magazine-visual-btn-area {
+        bottom: 36px;
+        left: unset;
+        right: 81px;
+    }
 }
 
 /* ========== store ========== */
@@ -954,4 +980,129 @@ section.main-bean.show img {
     color: #fff;
     background-color: #222;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 920px) {
+    .store {
+        height: 750px;
+        overflow: hidden;
+    }
+
+    .store-inner {
+        margin-left: 0;
+    }
+
+    .store-img01 {
+        background-size: 100% auto;
+        height: 199px;
+        left: 0;
+        width: 200px;
+    }
+
+    .store-img02 {
+        background-size: 100% auto;
+        height: 255px;
+        left: -204px;
+        width: 300px;
+    }
+
+    .store-img03 {
+        background-size: 100% auto;
+        height: 115px;
+        left: -204px;
+        top: 240px;
+        width: 280px;
+    }
+
+    .store-img04 {
+        background-size: 100% auto;
+        height: 75px;
+        left: 0;
+        top: 675px;
+        width: 170px;
+    }
+
+    .store-txt01 {
+        background: url(../images/store/221213_m_main_story_txt_1.png);
+        background-size: 100% auto;
+        height: 62px;
+        left: 0;
+        /* transform: translateX(-50%); */
+        position: absolute;
+        top: 390px;
+        width: 430px;
+        z-index: 4;
+    }
+
+    .store-txt01.active {
+        animation: fadeDown .3s ease forwards;
+        animation-delay: .3s;
+    }
+
+    @keyframes fadeDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .store-txt02 {
+        background: url(../images/store/221212_m_main_story_txt_2.png);
+        background-size: 100% auto;
+        height: 129px;
+        top: 475px;
+        left: 0;
+        margin-left: 0;
+        position: absolute;
+        width: 440px;
+        z-index: 4;
+    }
+
+    .store-txt02.active {
+        animation: fadeUp .3s ease forwards;
+        animation-duration: .3s;
+    }
+
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+    }
+
+    .store-btn {
+        border: 2px solid #222;
+        border-radius: 3px;
+        height: 34px;
+        left: 0;
+        line-height: -62px;
+        position: absolute;
+        top: 640px;
+        bottom: 70px;
+        width: 121px;
+        z-index: 4;
+    }
+
+    .store-btn.active {
+    animation: fadeIn02 1s ease forwards;
+    animation-delay: .3s;
+    }
+
+    .store-btn a {
+        color: #222;
+        display: block;
+        height: 100%;
+        text-align: center;
+        width: 100%;
+        transition: background-color .7s, color .7s;
+    }
 }
