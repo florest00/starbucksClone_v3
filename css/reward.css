@@ -121,3 +121,80 @@ strong {
 .btn-gift > a:hover {
     text-decoration: underline;
 }
+
+.mob-br {
+    display: none;
+}
+
+.pc-br {
+    display: none;
+}
+
+@media screen and (max-width: 920px) {
+    .reward {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+
+    .reward-inner {
+        display: block;
+    }
+
+    .reward-logo {
+        width: 40%;
+        margin: 0 auto 35px;
+    }
+
+    .reward-logo img {
+        min-width: 124px;
+    }
+
+    .reward-content {
+        width: 90%;
+        margin: 0 auto;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .reward-content-top .rct-txt-wrapper h2 {
+        font-size: 20px;
+    }
+
+    .mob-br {
+        display: block;
+    }
+
+    .pc-br {
+        display: none;
+    }
+
+    .reward-content-top > .rct-txt-wrapper > p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .btn-signin-group {
+        width: 80%;
+        display: inline-block;
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .btn-signin-group > a {
+        width: calc(50% - 5px);
+        border-radius: 3px;
+    }
+
+    .reward-content-bottom > .rcb-txt-wrapper > p {
+        line-height: 1.7;
+    }
+
+    .btn-gift {
+        border-radius: 3px;
+        width: 80%;
+        margin-top: 20px;
+        display: inline-block;
+        position: static;
+        margin-bottom: 20px;
+    }
+}

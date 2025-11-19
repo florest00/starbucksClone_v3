@@ -136,3 +136,105 @@
     color: red;
     text-decoration: underline;
 }
+
+.pc-drink {
+    display: block;
+}
+
+.mob-drink {
+    display: none;
+}
+
+@media screen and (max-width: 920px) {
+    .main-visual {
+    width: auto;
+    height: 367.97vw;
+    background-image: url(../images/visual/mob/2025_winter_top_bg_mo_251027.jpg);
+    background-position: center top;
+    box-sizing: border-box;
+    margin-top: 9px;
+}
+
+.main-visual-slogan {
+    width: 67.032%;
+    top: 9.852%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.set-common {
+    bottom: auto;
+    margin: 0;
+}
+
+.set001 {
+    z-index: 8;
+    top: 16.688%;
+    left: 9.376%;
+    width: 95.625%;
+    max-width: 100%;
+}
+
+.set002 {
+    z-index: 9;
+    top: 29.6396%;
+    left: 12.5%;
+    width: 78.282%;
+    max-width: 100%;
+}
+
+.set003 {
+    z-index: 10;
+    top: 47.9836%;
+    left: 9.376%;
+    width: 95.938%;
+    max-width: 100%;
+}
+
+.set004 {
+    z-index: 10;
+    top: 61.869%;
+    left: 12.5%;
+    width: 79.22%;
+    max-width: 100%;
+}
+
+.set005 {
+    z-index: 10;
+    top: 75.9666%;
+    left: 9.376%;
+    width: 99.846%;
+    max-width: 100%;
+}
+
+.main-visual-btn {
+    z-index: 10;
+    top: 92.8669%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 0;
+    height: auto;
+    bottom: auto;
+}
+
+.main-visual-btn > a {
+    width: 36%;
+    color: #fff;
+    border-color: #fff;
+    line-height: 10vw;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.pc-drink {
+    display: none;
+}
+
+.mob-drink {
+    display: block;
+}
+
+}
