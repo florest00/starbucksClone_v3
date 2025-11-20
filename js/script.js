@@ -130,8 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =============== 모바일 헤더 =================== */
-  // .header-mob-right ul li.header-mob04 a (햄버거 메뉴 아이콘)를 누르면 gnb 가 열림
-  // btn-gnb-close 룰 누르면 버튼이 회전하면서 gnb 가 닫힘
   const mobGnbMenus = document.querySelector(".mob-gnb-menus");
   const mobGnb = document.querySelector(".header-mob-gnb");
   const mobDim = document.querySelector(".header-mob-dim");
@@ -139,8 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ".header-mob-right ul li.header-mob04 a"
   );
   const btnClose = document.querySelector(".btn-gnb-close");
-  // const arrowDown = document.querySelector(".mob-gnb-arrow-down");
-  // const gnbMenusLi = document.querySelector(".mob-gnb-menus ul li");
 
   hamburger.addEventListener("click", (e) => {
     e.preventDefault();
@@ -154,8 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
   btnClose.addEventListener("click", (e) => {
     e.preventDefault();
 
-    //회전
-    // btnClose.classList.add("active");
     // 토글
     mobGnb.classList.remove("active");
     mobDim.classList.remove("active");
@@ -172,11 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mobDim.classList.remove("active");
   });
 
-  // gnbMenusLi.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  //   arrowDown.classList.toggle("active");
-  //   gnbMenusLi.classList.toggle("active");
-  // });
   const toggles = document.querySelectorAll(".mob-gnb-ttl1, .mob-gnb-ttl2");
 
   toggles.forEach((item) => {
@@ -197,5 +186,184 @@ document.addEventListener("DOMContentLoaded", () => {
         nextEl = nextEl.nextElementSibling;
       }
     });
+  });
+
+  /* ============= footer mob slider =========== */
+  // mob
+  const isMobile = window.matchMedia("(max-width: 920px)");
+  let sliderInitialized = false;
+
+  let autoSlide = null;
+  let isPaused = false;
+
+  let footerSlide;
+  let slideItems;
+  let currSlide;
+  let maxSlide;
+  let slideWidth;
+  let pauseButton;
+
+  let startElem, endElem;
+
+  function initSlider() {
+    if (sliderInitialized) return;
+    sliderInitialized = true;
+
+    footerSlide = document.querySelector(".footer-slide");
+    const controlWrap = document.querySelector(".footer-slider-controls");
+    if (!footerSlide || !controlWrap) return;
+
+    slideWidth = footerSlide.clientWidth;
+    slideItems = document.querySelectorAll(".footer-slide-item");
+    currSlide = 1;
+    maxSlide = slideItems.length;
+
+    // 기존 복제 슬라이드 제거
+    startElem?.remove();
+    endElem?.remove();
+
+    // 복제 슬라이드 생성
+    startElem = document.createElement("div");
+    endElem = document.createElement("div");
+
+    const lastSlide = slideItems[slideItems.length - 1];
+    lastSlide.classList.forEach((c) => endElem.classList.add(c));
+    endElem.innerHTML = lastSlide.innerHTML;
+
+    slideItems[0].before(endElem);
+    slideItems[slideItems.length - 1].after(startElem);
+
+    // slideItems 재선택
+    slideItems = document.querySelectorAll(".footer-slide-item");
+
+    let offset = slideWidth * currSlide;
+    slideItems.forEach((i) => (i.style.left = `${-offset}px`));
+
+    /** ---------------- 이동 함수 ---------------- */
+    function nextMove() {
+      resetAutoSlide();
+      currSlide++;
+
+      if (currSlide <= maxSlide) {
+        offset = slideWidth * currSlide;
+        slideItems.forEach((i) => (i.style.left = `${-offset}px`));
+      } else {
+        currSlide = 0;
+        offset = slideWidth * currSlide;
+
+        slideItems.forEach((i) => {
+          i.style.transition = "0s";
+          i.style.left = `${-offset}px`;
+        });
+
+        setTimeout(() => {
+          currSlide++;
+          offset = slideWidth * currSlide;
+          slideItems.forEach((i) => {
+            i.style.transition = "0.15s";
+            i.style.left = `${-offset}px`;
+          });
+        }, 0);
+      }
+    }
+
+    function prevMove() {
+      resetAutoSlide();
+      currSlide--;
+
+      if (currSlide > 0) {
+        offset = slideWidth * currSlide;
+        slideItems.forEach((i) => (i.style.left = `${-offset}px`));
+      } else {
+        currSlide = maxSlide + 1;
+        offset = slideWidth * currSlide;
+
+        slideItems.forEach((i) => {
+          i.style.transition = "0s";
+          i.style.left = `${-offset}px`;
+        });
+
+        setTimeout(() => {
+          currSlide--;
+          offset = slideWidth * currSlide;
+          slideItems.forEach((i) => {
+            i.style.transition = "0.15s";
+            i.style.left = `${-offset}px`;
+          });
+        }, 0);
+      }
+    }
+
+    /** ---------------- 자동 슬라이드 ---------------- */
+    function resetAutoSlide() {
+      if (isPaused) return;
+      clearInterval(autoSlide);
+      autoSlide = setInterval(nextMove, 3000);
+    }
+
+    autoSlide = setInterval(nextMove, 3000);
+
+    /** ---------------- 일시정지 버튼 ---------------- */
+    controlWrap.innerHTML = `<button class="pause-btn">⏸</button>`;
+    pauseButton = document.querySelector(".pause-btn");
+
+    pauseButton.addEventListener("click", () => {
+      if (!isPaused) {
+        clearInterval(autoSlide);
+        pauseButton.innerHTML = "▶";
+        isPaused = true;
+      } else {
+        autoSlide = setInterval(nextMove, 3000);
+        pauseButton.innerHTML = "⏸";
+        isPaused = false;
+      }
+    });
+
+    /** ---------------- 스와이프 / 터치 ---------------- */
+    let startPoint = 0;
+    let endPoint = 0;
+
+    footerSlide.addEventListener("touchstart", (e) => {
+      startPoint = e.touches[0].pageX;
+    });
+
+    footerSlide.addEventListener("touchend", (e) => {
+      endPoint = e.changedTouches[0].pageX;
+      if (startPoint < endPoint) prevMove();
+      else if (startPoint > endPoint) nextMove();
+    });
+
+    /** ---------------- 반응형 ---------------- */
+    window.addEventListener("resize", () => {
+      slideWidth = footerSlide.clientWidth;
+    });
+  }
+
+  // PC
+  /** ---------------- 슬라이더 제거 ---------------- */
+  function destroySlider() {
+    if (!sliderInitialized) return;
+    sliderInitialized = false;
+
+    clearInterval(autoSlide);
+
+    slideItems?.forEach((i) => (i.style = ""));
+
+    // 복제 슬라이드 제거
+    startElem?.remove();
+    endElem?.remove();
+
+    // 일시정지 버튼 제거
+    pauseButton?.remove();
+  }
+
+  /** ---------------- 초기 실행 ---------------- */
+  if (isMobile.matches) initSlider();
+  else destroySlider();
+
+  /** ---------------- 화면 크기 변경 시 ---------------- */
+  isMobile.addEventListener("change", (e) => {
+    if (e.matches) initSlider();
+    else destroySlider();
   });
 });
