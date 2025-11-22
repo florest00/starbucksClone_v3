@@ -832,9 +832,11 @@ section.main-bean.show img {
 .store-inner {
     position: absolute;
     top: 0;
-    left: 50%;
-    margin-left: -640px;
-    width: 1280px;
+    left: 0;
+    width: 100%;
+    /* left: 50%; */
+    /* margin-left: -640px; */
+    /* width: 1280px; */
 }
 
 .store-img01 {
@@ -995,21 +997,21 @@ section.main-bean.show img {
     .store-img01 {
         background-size: 100% auto;
         height: 199px;
-        left: 0;
+        left: 208px;
         width: 200px;
     }
 
     .store-img02 {
         background-size: 100% auto;
         height: 255px;
-        left: -204px;
+        left: 20px;
         width: 300px;
     }
 
     .store-img03 {
         background-size: 100% auto;
         height: 115px;
-        left: -204px;
+        left: -4px;
         top: 240px;
         width: 280px;
     }
@@ -1017,20 +1019,20 @@ section.main-bean.show img {
     .store-img04 {
         background-size: 100% auto;
         height: 75px;
-        left: 0;
+        right: -7%;
         top: 675px;
         width: 170px;
     }
 
     .store-txt01 {
-        background: url(../images/store/221213_m_main_story_txt_1.png);
-        background-size: 100% auto;
+        background: url(../images/store/221213_m_main_story_txt_1.png) no-repeat center;
+        background-size: 430px auto;
         height: 62px;
         left: 0;
         /* transform: translateX(-50%); */
         position: absolute;
         top: 390px;
-        width: 430px;
+        width: 100%;
         z-index: 4;
     }
 
@@ -1051,14 +1053,14 @@ section.main-bean.show img {
     }
 
     .store-txt02 {
-        background: url(../images/store/221212_m_main_story_txt_2.png);
-        background-size: 100% auto;
+        background: url(../images/store/221212_m_main_story_txt_2.png) no-repeat center;
+        background-size: 420px auto;
         height: 129px;
         top: 475px;
         left: 0;
         margin-left: 0;
         position: absolute;
-        width: 440px;
+        width: 100%;
         z-index: 4;
     }
 
@@ -1084,12 +1086,13 @@ section.main-bean.show img {
         border-radius: 3px;
         height: 34px;
         left: 0;
-        line-height: -62px;
         position: absolute;
         top: 640px;
         bottom: 70px;
         width: 121px;
         z-index: 4;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .store-btn.active {
