@@ -400,6 +400,7 @@
     line-height: 76px;
     text-indent: 20px;
   }
+
   .mob-gnb-menus ul li.mob-gnb-ttl1 a {
     color: #fff;
     display: block;
@@ -408,7 +409,11 @@
     width: 100%;
   }
 
-  .mob-gnb-menus ul li.mob-gnb-ttl1 a span.mob-gnb-arrow-down {
+  .mob-gnb-menus ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .mob-gnb-menus ul li.mob-gnb-ttl1 a span.mob-gnb-arrow-down, .mob-gnb-menus ul li.mob-gnb-ttl2 a span.mob-gnb-arrow-down {
     background: url(../images/header/mob/mob_gnb_arrow_down_w.png) no-repeat;
     display: block;
     height: 12px;
