@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+
     <script defer src="../js/script.js"></script>
 </head>
 
@@ -912,34 +913,40 @@
         </section>
         <!-- prom -->
         <section class="promotion">
-            <div class="swiper promotion-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="../images/promotion/tVaJCq_20251029090221768.jpg" alt="">
-                        <a href="#" class="btn-promotion">자세히 보기</a>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="../images/promotion/ukEYi4_20251023081003240.jpg" alt="">
-                        <a href="#" class="btn-promotion">자세히 보기</a>
-                    </div>
+            <ul class="promotion-slides">
+                <li class="promotion-slide">
+                    <a href="#">자세히 보기</a>
+                    <img src="../images/promotion/tVaJCq_20251029090221768.jpg" alt="prom01">
+                </li>
+                <li class="promotion-slide active">
+                    <a href="#">자세히 보기</a>
+                    <img src="../images/promotion/ukEYi4_20251023081003240.jpg" alt="prom02">
+                </li>
+                <li class="promotion-slide">
+                    <a href="#">자세히 보기</a>
+                    <img src="../images/promotion/tVaJCq_20251029090221768.jpg" alt="prom01">
+                </li>
+                <li class="promotion-slide">
+                    <a href="#">자세히 보기</a>
+                    <img src="../images/promotion/ukEYi4_20251023081003240.jpg" alt="prom02">
+                </li>
+            </ul>
+            <div class="controller">
+                <a class="stop" href="#"></a>
+                <div class="pager">
+                    <a href="#" class="dot active"></a>
+                    <a href="#" class="dot"></a>
                 </div>
-                <div class="swiper-pagination"></div>
+            </div>
+            <div class="prom-btn-wrapper">
+                <div class="prevBtn">
+                    <a href="#"></a>
+                </div>
+                <div class="nextBtn">
+                    <a href="#"></a>
+                </div>
             </div>
         </section>
-
-
-        <!-- <section class="promotion">
-            <div class="slider">
-                <div class="slides">
-                    <div class="slide"><img src="../images/promotion/tVaJCq_20251029090221768.jpg" alt=""></div>
-                    <div class="slide"><img src="../images/promotion/ukEYi4_20251023081003240.jpg" alt=""></div>
-                </div>
-                <div class="controls">
-                    <div class="dots"></div>
-                    <button id="pause-btn">⏸</button>
-                </div>
-            </div>
-        </section> -->
         <!-- reward -->
         <section class="reward">
             <div class="reward-inner">

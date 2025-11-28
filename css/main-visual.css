@@ -160,6 +160,9 @@
     top: 9.852%;
     left: 50%;
     transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: .3s;
 }
 
 .set-common {
@@ -173,6 +176,9 @@
     left: 9.376%;
     width: 95.625%;
     max-width: 100%;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: .6s;
 }
 
 .set002 {
@@ -181,6 +187,9 @@
     left: 12.5%;
     width: 78.282%;
     max-width: 100%;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: .9s;
 }
 
 .set003 {
@@ -189,6 +198,9 @@
     left: 9.376%;
     width: 95.938%;
     max-width: 100%;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: 1.2s;
 }
 
 .set004 {
@@ -197,6 +209,9 @@
     left: 12.5%;
     width: 79.22%;
     max-width: 100%;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: 1.5s;
 }
 
 .set005 {
@@ -205,6 +220,9 @@
     left: 9.376%;
     width: 99.846%;
     max-width: 100%;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: 1.8s;
 }
 
 .main-visual-btn {
@@ -217,6 +235,9 @@
     padding-top: 0;
     height: auto;
     bottom: auto;
+    opacity: 0;
+    animation: fadeIn .3s ease forwards;
+    animation-delay: 2s;
 }
 
 .main-visual-btn > a {
