@@ -21,16 +21,29 @@
 
 .notice-left-inner {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 8px;
-    width: 90%;
+    width: 96%;
     margin: 0 auto;
     line-height: 1.2;
 }
 
 .notice-left-inner h5 p {
     display: block;
+}
+
+.notice-left-inner > a {
+    width: 36px;
+    height: 36px;
+}
+
+.notice-left-inner > a > img {
+    width: 100%;
+}
+
+.notice-left-inner .notice-list {
+    width: 62%;
 }
 
 .notice-right {
