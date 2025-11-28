@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   animatedSections.forEach((sec) => observer.observe(sec));
 
   /* ======== header ======== */
+
   gnbItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
       const target = item.dataset.menu;
@@ -96,27 +97,119 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // ================== 프로모션 swiper =================== //
-  const promotionSwiper = new Swiper(".promotion-swiper", {
-    loop: true,
-    loopedSlides: 2,
-    autoHeight: true,
-    slidesPerView: "auto",
-    spaceBetween: 20,
-    centeredSlides: true,
-    loopAdditionalSlides: 2,
-    autoplay: {
-      delay: 2500,
-      pauseOnMouseEnter: true,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
+  // ================== 프로모션 slider =================== //
+  const ul = document.querySelector(".promotion-slides");
+  const slides = document.querySelectorAll(".promotion-slide");
+  const slideWidth2 = slides[0].offsetWidth + 849;
+  const dots = document.querySelectorAll(".dot");
+
+  let isMoving = false;
+  let autoplay2 = true;
+  let intervalId2 = null;
+
+  const observer2 = new MutationObserver(() => {
+    slides.forEach((slide, index) => {
+      if (slide.classList.contains("active")) {
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        const dotIndex = index % dots.length;
+
+        dots[dotIndex].classList.add("active");
+      }
+    });
   });
 
+  slides.forEach((slide) => {
+    observer2.observe(slide, { attributes: true, attributeFilter: ["class"] });
+  });
+
+  function nextSlide() {
+    if (isMoving) return;
+    isMoving = true;
+
+    ul.style.transition = "transform 1s ease";
+    ul.style.transform = `translateX(-${slideWidth2}px)`;
+
+    ul.addEventListener("transitionend", function handler() {
+      ul.style.transition = "none";
+      ul.style.transform = "translateX(0)";
+
+      ul.appendChild(ul.firstElementChild);
+
+      isMoving = false;
+      ul.removeEventListener("transitionend", handler);
+      updateActive();
+    });
+  }
+
+  function prevSlide() {
+    if (isMoving) return;
+    isMoving = true;
+
+    ul.style.transition = "none";
+    ul.insertBefore(ul.lastElementChild, ul.firstElementChild);
+
+    ul.style.transform = `translateX(-${slideWidth2}px)`;
+
+    requestAnimationFrame(() => {
+      ul.style.transition = "transform 0.5s ease";
+      ul.style.transform = "translateX(0)";
+    });
+
+    ul.addEventListener("transitionend", function handler() {
+      isMoving = false;
+      ul.removeEventListener("transitionend", handler);
+      updateActive();
+    });
+  }
+
+  function updateActive() {
+    const all = document.querySelectorAll(".promotion-slide");
+    all.forEach((slide) => slide.classList.remove("active"));
+    all[1].classList.add("active"); // 가운데 슬라이드 활성화
+  }
+
+  document.querySelector(".nextBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+    nextSlide();
+  });
+  document.querySelector(".prevBtn").addEventListener("click", () => {
+    e.preventDefault();
+    prevSlide();
+  });
+
+  function startAutoSlide() {
+    if (!intervalId2) {
+      intervalId2 = setInterval(nextSlide, 3000);
+    }
+  }
+
+  function stopAutoSlide() {
+    clearInterval(intervalId2);
+    intervalId2 = null;
+  }
+
+  // stop/start 버튼 토글
+  const stopBtn = document.querySelector(".controller > a");
+
+  stopBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (autoplay2) {
+      stopAutoSlide();
+      stopBtn.classList.remove("stop");
+      stopBtn.classList.add("start");
+    } else {
+      startAutoSlide();
+      stopBtn.classList.remove("start");
+      stopBtn.classList.add("stop");
+    }
+    autoplay2 = !autoplay2;
+  });
+
+  startAutoSlide();
+
   /*=============== 프로모션 토글 ===============*/
+
   const promoBtn = document.querySelector(".notice-right > a");
   const promoIcon = promoBtn.querySelector("span");
   const promotion = document.querySelector(".promotion");
@@ -124,7 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
   promoBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // 토글 상태 전환
     promoIcon.classList.toggle("active");
     promotion.classList.toggle("active");
   });
@@ -141,7 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
   hamburger.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // 토글
     mobGnb.classList.add("active");
     mobDim.classList.add("active");
     mobGnbMenus.classList.add("active");
@@ -150,7 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
   btnClose.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // 토글
     mobGnb.classList.remove("active");
     mobDim.classList.remove("active");
 
@@ -161,7 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mobDim.addEventListener("click", (e) => {
     e.preventDefault();
-    // 토글
     mobGnb.classList.remove("active");
     mobDim.classList.remove("active");
   });
@@ -365,5 +454,27 @@ document.addEventListener("DOMContentLoaded", () => {
   isMobile.addEventListener("change", (e) => {
     if (e.matches) initSlider();
     else destroySlider();
+  });
+
+  /* ============= footer mob arcodian =========== */
+  const footerMenu = document.querySelectorAll(".footer-menu-ttl");
+
+  footerMenu.forEach((menu) => {
+    menu.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const arrow = menu.querySelector(".footer-arrow-down");
+
+      const submenu = menu.parentElement.querySelectorAll(
+        ".footer-menu-item, .footer-2depth-ttl"
+      );
+
+      menu.classList.toggle("active");
+      arrow.classList.toggle("rotate");
+
+      submenu.forEach((item) => {
+        item.classList.toggle("active");
+      });
+    });
   });
 });
